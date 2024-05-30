@@ -8,9 +8,6 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.description}>
         <FetchMovies/>
-        <FetchMovies/>
-        <FetchMovies/>
-        <FetchMovies/>
 
       </div>
     </main>

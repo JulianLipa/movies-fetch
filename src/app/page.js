@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import FetchMovies from "@app/components/FetchMovies/FetchMovies.js";
 
 
 

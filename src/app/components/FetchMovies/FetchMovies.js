@@ -14,7 +14,7 @@ const FetchMovies = () => {
     const handleFetchMovies = async () => {
       try {
         const response = await axios.get(
-          "https://api.themoviedb.org/3/discover/movie?api_key=eb7e3fd7272143562cec959061b5eb32&with_genres=27"
+          "https://api.themoviedb.org/3/trending/movie/day?api_key=eb7e3fd7272143562cec959061b5eb32"
         );
         const data = response.data.results;
         setMovies(data);

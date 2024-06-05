@@ -4,13 +4,13 @@ import FetchMovies from "./components/FetchMovies/FetchMovies";
 import MoviePage from "./components/MoviePage/MoviePage";
 import ReactDOM from 'react-dom';
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <FetchMovies/>
-        <MoviePage/>
-      </div>
-    </main>
-  );
-}
+export default function moviePage() {
+    return (
+      <main className={styles.main}>
+        <div className={styles.description}>
+          <FetchMovies/>
+          <MoviePage/>
+        </div>
+      </main>
+    );
+  }

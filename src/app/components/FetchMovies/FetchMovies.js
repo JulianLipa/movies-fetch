@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
+import styles from "./FetchMovies.module.css";
+
 
 const FetchMovies = () => {
   const [movies, setMovies] = useState([]);
@@ -29,7 +31,7 @@ const FetchMovies = () => {
   }, []);
 
   return (
-    <div>
+    <div className={`${styles["container_fetch_movies"]} ` }>
       {loading && <p>Fetching data</p>}
       {!loading &&
         movies.map((movie, index) => {

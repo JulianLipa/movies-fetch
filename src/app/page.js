@@ -6,6 +6,7 @@ import Navbar from "@/app/components/Navbar/Navbar"
 import Footer from "@/app/components/Footer/Footer"
 
 export default function Home() {
+<<<<<<< HEAD
   const menuItems = [
     {
       item: "Favorites",
@@ -34,9 +35,10 @@ export default function Home() {
       link:"/",
     }
   ]
+=======
+>>>>>>> c046457b8e2be3ffa8e134a023f838649a4c91b6
   return (
     <main className={styles.main}>
-        <Navbar menu={menuItems}/>
         <FetchMovies />
         <Footer social={socialMedia}/>
     </main>

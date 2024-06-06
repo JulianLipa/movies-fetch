@@ -7,10 +7,6 @@ import Navbar from "@/app/components/Navbar/Navbar"
 export default function Home() {
   return (
     <main className={styles.main}>
-<<<<<<< HEAD
-        <Navbar menu={menuItems}/>
-=======
->>>>>>> d267e31 (navbar in all pages)
         <FetchMovies />
     </main>
   );

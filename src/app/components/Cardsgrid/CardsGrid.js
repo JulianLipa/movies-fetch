@@ -1,4 +1,4 @@
-import Card from "@/app/components/Card/card";
+import Card from "@/app/components/Card/Card";
 
 const CardsGrid = ({ cards }) => {
   

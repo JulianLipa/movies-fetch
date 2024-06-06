@@ -3,8 +3,6 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Image from "next/image";
-import Link from "next/link";
 
 const SingleMovie = ({params}) => {
   const {id} = params;

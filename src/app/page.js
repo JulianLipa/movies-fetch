@@ -3,6 +3,7 @@
 import styles from "./page.module.css";
 import FetchMovies from "./components/FetchMovies/FetchMovies";
 import Navbar from "@/app/components/Navbar/Navbar"
+import Footer from "@/app/components/Footer/Footer"
 
 export default function Home() {
   const menuItems = [
@@ -19,11 +20,26 @@ export default function Home() {
       image:'/images/usuario-blanco.png'
     }
   ]
+  const socialMedia= [
+    {
+      image:'',
+      link:"/",
+    },
+    {
+      image:'',
+      link:"/",
+    },
+    {
+      image:'',
+      link:"/",
+    }
+  ]
   return (
     <main className={styles.main}>
         <Navbar menu={menuItems}/>
         <p>Trending today</p>
         <FetchMovies />
+        <Footer social={socialMedia}/>
     </main>
   );
 }

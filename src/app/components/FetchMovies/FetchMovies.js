@@ -6,7 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./FetchMovies.module.css";
 
-
 const FetchMovies = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -31,23 +30,27 @@ const FetchMovies = () => {
   }, []);
 
   return (
-    <div className={`${styles["container_fetch_movies"]} ` }>
+    <div className={`${styles["container_fetch_movies"]}`}>
       {loading && <p>Fetching data</p>}
       {!loading &&
         movies.map((movie, index) => {
-          return(
-            <div key={index}>
-            <Link href={`/movies/${movie.id}`}>
-              <Image
-                src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                alt="cover image"
-                width={200}
-                height={270}
-              />
-              <h2>{movie.title}</h2>
-              <h3>{movie.vote_average}/10</h3>
+          return (
+            <Link
+              href={`/movies/${movie.id}`}
+              key={index}
+              className={`${styles["movie_card"]}`}
+            >
+                <Image
+                  src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                  alt="cover image"
+                  width={200}
+                  height={270}
+                />
+                <div className={`${styles["movie_card_text"]}`}>
+                  <h2>{movie.title}</h2>
+                  <h3>{movie.vote_average}/10</h3>
+                </div>
             </Link>
-            </div>
           );
         })}
     </div>

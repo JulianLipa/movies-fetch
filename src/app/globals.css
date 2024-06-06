@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-.grid {
+/*.grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 30px;
@@ -196,4 +196,4 @@
 
 .no_gap {
   grid-gap: 0;
-}
+}*/

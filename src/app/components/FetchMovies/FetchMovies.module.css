@@ -1,5 +1,31 @@
 .container_fetch_movies{
-
     display: flex;
-width: 60%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie_card{
+    width: 15vw;
+    background-color: lightgrey;
+    border-radius: 1%;
+    margin: 1%;
+    padding: 1%;
+}
+
+.movie_card img{
+    height: auto !important;
+}
+
+.movie_card h2{
+    width: 150px;
+}
+
+.movie_card_text{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.movie_card_text h2{
+    width: 100%;
 }

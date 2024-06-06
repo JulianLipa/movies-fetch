@@ -46,7 +46,6 @@ const FetchMovies = () => {
 
 
             <Link
-            
               href={`/movies/${movie.id}`}
               key={index}
               className={`${styles["movie_card"]}`}

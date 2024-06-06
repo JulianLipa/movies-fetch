@@ -12,11 +12,11 @@ export const metadata = {
 const menuItems = [
   {
     item: "Favorites",
-    link:"/",
+    link:"/favorites",
   },
   {
     item: "Watchlist",
-    link:"/",
+    link:"/watchlist",
   },
   {
     description:'',

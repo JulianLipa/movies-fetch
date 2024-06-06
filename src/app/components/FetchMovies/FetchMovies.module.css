@@ -1,5 +1,6 @@
 .container_fetch_movies{
 
-    display: flex;
-width: 60%;
+display: flex;
+flex-wrap: wrap;
+
 }

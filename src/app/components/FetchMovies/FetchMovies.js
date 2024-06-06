@@ -16,7 +16,7 @@ const FetchMovies = () => {
     const handleFetchMovies = async () => {
       try {
         const response = await axios.get(
-          "https://api.themoviedb.org/3/discover/movie?api_key=eb7e3fd7272143562cec959061b5eb32&with_genres=27"
+          "https://api.themoviedb.org/3/trending/movie/day?api_key=eb7e3fd7272143562cec959061b5eb32"
         );
         const data = response.data.results;
         setMovies(data);
@@ -36,14 +36,18 @@ const FetchMovies = () => {
       {!loading &&
         movies.map((movie, index) => {
           return(
-            <Link key={index} href={`/movies/${movie.id}`}>
+            <div key={index}>
+            <Link href={`/movies/${movie.id}`}>
               <Image
                 src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                 alt="cover image"
                 width={200}
                 height={270}
               />
+              <h2>{movie.title}</h2>
+              <h3>{movie.vote_average}/10</h3>
             </Link>
+            </div>
           );
         })}
     </div>

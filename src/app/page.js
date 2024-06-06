@@ -37,7 +37,6 @@ export default function Home() {
   return (
     <main className={styles.main}>
         <Navbar menu={menuItems}/>
-        <p>Trending today</p>
         <FetchMovies />
         <Footer social={socialMedia}/>
     </main>

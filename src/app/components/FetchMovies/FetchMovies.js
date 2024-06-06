@@ -6,6 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./FetchMovies.module.css";
 
+function redondo(x) {
+  return Number.parseFloat(x).toFixed(2);
+}
 
 const FetchMovies = () => {
   const [movies, setMovies] = useState([]);
@@ -31,25 +34,50 @@ const FetchMovies = () => {
   }, []);
 
   return (
-    <div className={`${styles["container_fetch_movies"]} ` }>
+    <div  className={`${styles["container_title_grid"]}`}>
+    <h1>Trending Today</h1>
+    
+    <div className={`${styles["container_fetch_movies"]}`}>
+
       {loading && <p>Fetching data</p>}
       {!loading &&
         movies.map((movie, index) => {
-          return(
-            <div key={index}>
-            <Link href={`/movies/${movie.id}`}>
-              <Image
-                src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                alt="cover image"
-                width={200}
-                height={270}
-              />
-              <h2>{movie.title}</h2>
-              <h3>{movie.vote_average}/10</h3>
+          return (
+
+
+            <Link
+            
+              href={`/movies/${movie.id}`}
+              key={index}
+              className={`${styles["movie_card"]}`}
+            >
+              
+                <Image
+                  src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                  alt="cover image"
+                  width={200}
+                  height={270}
+                />
+              <div className={`${styles["container_text_movie"]}`} >
+
+               
+                  <h2>{movie.title}</h2>
+                  <div >
+                  <div className={`${styles["container_rate_star"]}`}>
+                  <Image
+                  src={"/star.png"}
+                  alt="cover image"
+                  width={15}
+                  height={15}
+                />
+                  <h3>{Math.trunc(movie.vote_average)}/10</h3>
+                  </div>
+                </div>
+                </div>
             </Link>
-            </div>
           );
         })}
+    </div>
     </div>
   );
 };

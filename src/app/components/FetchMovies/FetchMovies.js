@@ -43,14 +43,11 @@ const FetchMovies = () => {
       {!loading &&
         movies.map((movie, index) => {
           return (
-
-
             <Link
               href={`/movies/${movie.id}`}
               key={index}
               className={`${styles["movie_card"]}`}
-            >
-              
+            > 
                 <Image
                   src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                   alt="cover image"

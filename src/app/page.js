@@ -6,38 +6,9 @@ import Navbar from "@/app/components/Navbar/Navbar"
 import Footer from "@/app/components/Footer/Footer"
 
 export default function Home() {
-  const menuItems = [
-    {
-      item: "Favorites",
-      link:"/",
-    },
-    {
-      item: "Watchlist",
-      link:"/",
-    },
-    {
-      description:'',
-      image:'/images/usuario-blanco.png'
-    }
-  ]
-  const socialMedia= [
-    {
-      image:'',
-      link:"/",
-    },
-    {
-      image:'',
-      link:"/",
-    },
-    {
-      image:'',
-      link:"/",
-    }
-  ]
   return (
     <main className={styles.main}>
         <FetchMovies />
-        <Footer social={socialMedia}/>
     </main>
   );
 }

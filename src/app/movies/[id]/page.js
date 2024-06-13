@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import styles from "./movies.module.css";
+import FetchCast from "@/app/components/FetchCast/FetchCast";
+import FetchStreams from "@/app/components/FetchStreams/FetchStreams";
+import FetchGenres from "@/app/components/FetchGenres/FetchGenres";
 
 const SingleMovie = ({ params }) => {
   const { id } = params;
@@ -48,36 +51,8 @@ const SingleMovie = ({ params }) => {
       }
     };
 
-    const handleCast = async () => {
-      setLoading(true);
-      try {
-        const response = await axios.get(
-          `https://api.themoviedb.org/3/movie/${id}/credits?api_key=eb7e3fd7272143562cec959061b5eb32`
-        );
-        const cast = response.data.cast.slice(0, 3);
-        let crew = response.data.crew;
-        let director;
-
-        for (let i = 0; i < crew.length; i++) {
-          if (crew[i].job === "Director") {
-            director = crew[i];
-            break; // Exit loop once the director is found
-          }
-        }
-
-        setLoading(false);
-        setCast({
-          cast: cast,
-          director: director,
-        });
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-
     handleFetchMovies();
     handleMoviesFrames();
-    handleCast();
   }, [id]);
 
   return (
@@ -90,7 +65,8 @@ const SingleMovie = ({ params }) => {
           height={images.height}
         />
       )}
-      {!loading && movie && images.filePath && (
+
+      {!loading && movie && images.filePath  && (
         <div className={`${styles["container_single_movies"]}`}>
          <div className={"container_hero"}>
             <div className={`${styles["overlay"]}`}></div>
@@ -121,20 +97,14 @@ const SingleMovie = ({ params }) => {
               width={200}
               height={270}
             />*/}
-            <div className={`${styles["direccion"]}`}>
-              <h2>Director:</h2>
-              <h3>{cast.director.name}</h3>
-             {/* <Image
-                src={`https://image.tmdb.org/t/p/original${cast.director.profile_path}`}
-                alt="cover image"
-                width={100}
-                height={150}
-              />*/}
+
+            <div>
+              <FetchStreams id={id} />
             </div>
 
             <div>
-              <h2>Cast:</h2>
-              {/* Componente de cast */}
+              <h2>Cast</h2>
+              <FetchCast id={id}/>
             </div>
           </div>
         </div>

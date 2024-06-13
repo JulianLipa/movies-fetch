@@ -100,8 +100,8 @@ const SingleMovie = ({ params }) => {
               <FetchStreams id={id} />
             </div>
 
-            <div className={`${styles["cast"]}`}>
-              <h2>Cast:</h2>
+            <div>
+              <h2>Cast</h2>
               <FetchCast id={id} directorState={false}/>
               <FetchCast id={id} directorState={true}/>
             </div>

@@ -13,8 +13,6 @@ const SingleMovie = ({ params }) => {
   const [movie, setMovie] = useState({ movie: "", year: "" });
   const [images, setImages] = useState({ filePath: "", width: 0, height: 0 });
   const [loading, setLoading] = useState(true);
-  const [cast, setCast] = useState({ director: "", cast: "" });
-  const [stream, setStreams] = useState({});
 
   useEffect(() => {
     const handleFetchMovies = async () => {
@@ -54,53 +52,8 @@ const SingleMovie = ({ params }) => {
       }
     };
 
-    const handleCast = async () => {
-      setLoading(true);
-      try {
-        const response = await axios.get(
-          `https://api.themoviedb.org/3/movie/${id}/credits?api_key=eb7e3fd7272143562cec959061b5eb32`
-        );
-        const cast = response.data.cast.slice(1, 5);
-        let crew = response.data.crew;
-        let director;
-
-        for (let i = 0; i < crew.length; i++) {
-          if (crew[i].job === "Director") {
-            director = crew[i];
-            break;
-          }
-        }
-        setCast({
-          cast: cast,
-          director: director,
-        });
-      } catch (error) {
-        console.log("error", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    const handleWatchStreams = async () => {
-      setLoading(true);
-      try {
-        const response = await axios.get(
-          `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=eb7e3fd7272143562cec959061b5eb32`
-        );
-        const data = response.data.results.US;
-
-        setStreams(data);
-      } catch (error) {
-        console.log("error", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     handleFetchMovies();
     handleMoviesFrames();
-    handleCast();
-    handleWatchStreams();
   }, [id]);
 
   console.log(movie);
@@ -116,7 +69,7 @@ const SingleMovie = ({ params }) => {
         />
       )}
 
-      {!loading && movie && images.filePath && stream != "" && cast != "" && (
+      {!loading && movie && images.filePath  && (
         <div className={`${styles["container_single_movies"]}`}>
           <Image
             className={`${styles["img_hero"]}`}
@@ -137,24 +90,12 @@ const SingleMovie = ({ params }) => {
             />
 
             <div>
-              <h2>Director</h2>
-              <p>{cast.director.name}</p>
-              <Image
-                src={`https://image.tmdb.org/t/p/original${cast.director.profile_path}`}
-                alt="cover image"
-                width={100}
-                height={150}
-              />
-            </div>
-
-            <div>
-              <FetchStreams streams={stream} />
+              <FetchStreams id={id} />
             </div>
 
             <div>
               <h2>Cast</h2>
-              <FetchCast cast={cast.cast} />
-              {/* Componente de cast */}
+              <FetchCast id={id}/>
             </div>
 
             <div>

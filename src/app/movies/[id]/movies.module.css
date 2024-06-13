@@ -65,5 +65,10 @@
     padding-left: 10px;
     font-weight: 400;
 }
+
+.cast{
+    display: flex;
+    align-items: center;
+}
   
   

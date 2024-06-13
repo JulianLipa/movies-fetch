@@ -1,0 +1,19 @@
+.cast{
+    display:flex;
+}
+
+.direccion{
+    display:flex;
+    padding-top: 20px;
+}
+.direccion h2{
+    padding-right: 10px;
+    font-size: 18px;
+}
+
+.direccion h3{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+

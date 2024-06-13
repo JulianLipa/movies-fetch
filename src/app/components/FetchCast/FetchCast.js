@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
+import styles from "./FetchCast.module.css"
 
 const FetchCast = ({ id }) => {
   const [cast, setCast] = useState({ director: "", actors: "" });
@@ -43,26 +44,26 @@ const FetchCast = ({ id }) => {
     <div>
       {!loading &&
         cast.actors.map((member, index) => (
-          <div key={index}>
-            <p>{member.name}</p>
-            <Image
+          <div className={`${styles["cast"]}`} key={index}>
+            <p>{member.name},</p>
+           {/* <Image
               src={`https://image.tmdb.org/t/p/original${member.profile_path}`}
               alt="cover image"
               width={100}
               height={150}
-            />
+            />*/}
           </div>
         ))}
         {!loading && (
-        <div>
-            <h2>Director</h2>
-          <p>{cast.director.name}</p>
-          <Image
+        <div className={`${styles["direccion"]}`}>
+            <h2>Director:</h2>
+            <h3>{cast.director.name}</h3>
+          {/*<Image
             src={`https://image.tmdb.org/t/p/original${cast.director.profile_path}`}
             alt="cover image"
             width={100}
             height={150}
-          />
+          />*/}
         </div>
       )}
     </div>

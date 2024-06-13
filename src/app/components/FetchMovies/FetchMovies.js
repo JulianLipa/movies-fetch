@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./FetchMovies.module.css";
 import FetchGenres from "../FetchGenres/FetchGenres";
+import FetchStreams from "../FetchStreams/FetchStreams";
 
 function redondo(x) {
   return Number.parseFloat(x).toFixed(2);
@@ -40,10 +41,10 @@ const FetchMovies = () => {
       <div className={`${styles["container_fetch_movies"]}`}>
         {loading && (
           <Image
-            src="/public/images/loading.webp"
+            src="/images/loading.webp"
             alt="loading image"
-            width={200}
-            height={200}
+            width={100}
+            height={100}
           />
         )}
         {!loading &&

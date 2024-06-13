@@ -13,7 +13,6 @@ const SingleMovie = ({ params }) => {
   const [movie, setMovie] = useState({ movie: "", year: "" });
   const [images, setImages] = useState({ filePath: "", width: 0, height: 0 });
   const [loading, setLoading] = useState(true);
-  const [cast, setCast] = useState({ director: "", cast: "" });
 
   useEffect(() => {
     const handleFetchMovies = async () => {
@@ -59,10 +58,10 @@ const SingleMovie = ({ params }) => {
     <div>
       {loading && (
         <Image
-          src="/public/images/loading.webp"
+          src="/images/loading.webp"
           alt="cover image"
-          width={images.width}
-          height={images.height}
+          width={100}
+          height={100}
         />
       )}
 
@@ -85,8 +84,7 @@ const SingleMovie = ({ params }) => {
             <div className={`${styles["año_genero"]}`}>
               <h3>{movie.year}</h3>
               <div>
-                <h2>Genres</h2>
-                {/* Componente de genres */}
+                <FetchGenres genres={movie.movie.genres}/>
               </div>
             </div>
 
@@ -104,7 +102,8 @@ const SingleMovie = ({ params }) => {
 
             <div className={`${styles["cast"]}`}>
               <h2>Cast:</h2>
-              <FetchCast id={id}/>
+              <FetchCast id={id} directorState={false}/>
+              <FetchCast id={id} directorState={true}/>
             </div>
           </div>
         </div>

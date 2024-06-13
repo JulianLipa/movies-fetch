@@ -76,7 +76,7 @@ const FetchMovies = () => {
                   </div>
                 </div>
                 <div className={`${styles["container_hover"]}`}>
-                    <h2>holaaa</h2>
+                    <h4>{movie.release_date}</h4>
                 </div>
               </Link>
             );

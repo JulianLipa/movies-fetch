@@ -5,6 +5,7 @@ import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./FetchMovies.module.css";
+import FetchGenres from "../FetchGenres/FetchGenres";
 
 function redondo(x) {
   return Number.parseFloat(x).toFixed(2);

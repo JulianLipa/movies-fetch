@@ -8,6 +8,7 @@
 .container_title_grid h1 {
   font-size: 30px;
   padding-left: 25px;
+  color: white;
 }
 .container_fetch_movies {
   display: flex;
@@ -24,6 +25,8 @@
   padding: 20px;
   height: 400px;
   transition: all 0.5s ease;
+  border: 1px solid black;
+  position: relative;
 }
 
 .movie_card img {
@@ -57,16 +60,57 @@
   display: block;
 }
 
+.container_main img:first-of-type{
+  transition: all ease 1s;
+}
+
 .container_hover {
-  display: none;
   opacity: 0%;
+  transition: all ease 0.5s;
+}
+
+.container_hover h4{
+  color: white;
+  padding-top: 8px;
 }
 
 .movie_card:hover .container_hover {
-  display: block;
   opacity: 100%;
 }
 
-.movie_card:hover {
-  height: 450px;
+.movie_card:hover{
+  border: 1px solid white;
+}
+
+.movie_card:hover > .container_main .movie_poster{
+  opacity: 0.3;
+}
+
+.movie_poster{
+  border-radius: 10px;
+}
+
+.container_genres{
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 20px;
+  margin: 5px;
+}
+
+.genre_component{
+  display: flex;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 1px solid green;
+  border-radius: 15px;
+  background-color: rgba(0, 64, 0, 0.7);
+  padding: 5px;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.genre_component:hover{
+  background-color: black;
+  border: 1px solid white;
 }

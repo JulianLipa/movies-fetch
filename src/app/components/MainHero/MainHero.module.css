@@ -1,0 +1,35 @@
+.hero_container{
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url("http://localhost:3000/_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2Fraph7qjAGTMXaIjVxt6ZDSXRzUr.jpg&w=3840&q=75");
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-attachment: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_component{
+    width: 40vw;
+    height: 5vh;
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1em;
+    color: white;
+    font-family: '__Inter_aaf875', '__Inter_Fallback_aaf875';
+    font-weight: 400;
+    transition: all 0.5s ease;
+}
+
+.input_component:focus{
+    outline: none !important;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.logo{
+    margin: 0 50%;
+}

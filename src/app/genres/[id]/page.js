@@ -1,13 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./FetchMovies.module.css";
-import FetchGenresById from "@/app/components/FetchGenresById/FetchGenresById.js";
+import styles from "@/app/components/FetchMovies/FetchMovies.module.css";
+import FetchCast from "@/app/components/FetchCast/FetchCast";
+import FetchStreams from "@/app/components/FetchStreams/FetchStreams";
+import FetchGenres from "@/app/components/FetchGenres/FetchGenres";
+import FetchGenresById from "@/app/components/FetchGenresById/FetchGenresById"
 
-const FetchMovies = () => {
+const FetchMoviesByGenre = ({ params }) => {
+  const { id } = params;
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -16,10 +20,10 @@ const FetchMovies = () => {
     const handleFetchMovies = async () => {
       try {
         const response = await axios.get(
-          "https://api.themoviedb.org/3/trending/movie/day?api_key=eb7e3fd7272143562cec959061b5eb32"
+          `https://api.themoviedb.org/3/discover/movie?with_genres=${id}&api_key=eb7e3fd7272143562cec959061b5eb32`
         );
         const data = response.data.results;
-        setMovies(data.slice(0, 5));
+        setMovies(data.slice(0, 10));
         setLoading(false);
       } catch (error) {
         console.log("error", error);
@@ -27,9 +31,7 @@ const FetchMovies = () => {
     };
 
     handleFetchMovies();
-  }, []);
-
-  console.log(movies)
+  }, [id]);
 
   return (
     <div className={`${styles["container_title_grid"]}`}>
@@ -72,10 +74,9 @@ const FetchMovies = () => {
                         <h3>{Math.trunc(movie.vote_average)}/10</h3>
                       </div>
                   </div>
-                </div>
-                <div className={`${styles["container_hover"]}`}>
-                  <h4>{}</h4>
+                  <div className={`${styles["container_hover"]}`}>
                   <FetchGenresById id={movie.id} />
+                </div>
                 </div>
               </Link>
             );
@@ -85,4 +86,4 @@ const FetchMovies = () => {
   );
 };
 
-export default FetchMovies;
+export default FetchMoviesByGenre;

@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
+import styles from "@/app/movies/[id]/movies.module.css";
 
 const FetchStreams = ({ id }) => {
   const [stream, setStreams] = useState({});
@@ -30,7 +31,7 @@ const FetchStreams = ({ id }) => {
   console.log(stream);
 
   return (
-    <div>
+    <div className={`${styles["stream_container"]}`}>
       {!loading && stream != undefined && stream.hasOwnProperty('flatrate') && (
         <div>
           <Image

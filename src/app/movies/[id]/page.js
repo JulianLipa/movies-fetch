@@ -6,7 +6,7 @@ import Image from "next/image";
 import styles from "./movies.module.css";
 import FetchCast from "@/app/components/FetchCast/FetchCast";
 import FetchStreams from "@/app/components/FetchStreams/FetchStreams";
-import FetchGenres from "@/app/components/FetchGenres/FetchGenres";
+import FetchGenresById from "@/app/components/FetchGenresById/FetchGenresById";
 
 const SingleMovie = ({ params }) => {
   const { id } = params;
@@ -65,9 +65,9 @@ const SingleMovie = ({ params }) => {
         />
       )}
 
-      {!loading && movie && images.filePath  && (
+      {!loading && movie.movie && images.filePath && (
         <div className={`${styles["container_single_movies"]}`}>
-         <div className={"container_hero"}>
+          <div className={"container_hero"}>
             <div className={`${styles["overlay"]}`}></div>
             <Image
               className={`${styles["img_hero"]}`}
@@ -76,34 +76,39 @@ const SingleMovie = ({ params }) => {
               width={images.width}
               height={images.height}
             />
-         </div>
-          
+          </div>
           <div className={`${styles["content"]}`}>
-            <h1>{movie.movie.title}</h1>
-
-            <div className={`${styles["año_genero"]}`}>
-              <h3>{movie.year}</h3>
-              <div>
-                <FetchGenres genres={movie.movie.genres}/>
-              </div>
-            </div>
-
-            <p className={`${styles["info"]}`}>{movie.movie.overview}</p>
-            {/*<Image
+            <Image
               src={`https://image.tmdb.org/t/p/original${movie.movie.poster_path}`}
               alt="cover image"
               width={200}
-              height={270}
-            />*/}
-
-            <div>
-              <FetchStreams id={id} />
+              height={300}
+              className={`${styles["poster_img"]}`}
+            />
+            <div className={`${styles["genre_container"]}`}>
+              <h1>{movie.movie.title}</h1>
+              <div className={`${styles["año_genero"]}`}>
+                <h3>{movie.year}</h3>
+                <FetchGenresById id={movie.movie.id} />
+              </div>
+              <p className={`${styles["info"]}`}>{movie.movie.overview}</p>
             </div>
 
-            <div>
-              <h2>Cast</h2>
-              <FetchCast id={id} directorState={false}/>
-              <FetchCast id={id} directorState={true}/>
+            <div className={`${styles["content_full_width"]}`}>
+              <div>
+                <h2>Available on</h2>
+                <FetchStreams id={id} />
+              </div>
+
+              <div className={`${styles["cast_container"]}`}>
+                <h2>Cast</h2>
+                <FetchCast id={id} directorState={false} />
+              </div>
+
+              <div className={`${styles["cast_container"]}`}>
+                <h2>Director</h2>
+                <FetchCast id={id} directorState={true} />
+              </div>
             </div>
           </div>
         </div>

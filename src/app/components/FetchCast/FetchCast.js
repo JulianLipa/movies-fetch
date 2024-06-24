@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
-import styles from "./FetchCast.module.css"
+import styles from "./FetchCast.module.css";
 
 const FetchCast = ({ id, directorState }) => {
   const [cast, setCast] = useState({ director: "", actors: "" });
@@ -41,30 +41,32 @@ const FetchCast = ({ id, directorState }) => {
   }, [id]);
 
   return (
-    <div>
-      {!loading && !directorState &&
+    <div className={`${styles["cast_container"]}`}>
+      {!loading &&
+        !directorState &&
         cast.actors.map((member, index) => (
-          <div key={index}>
-            <p>{member.name}</p>
-           {/*} <Image
+          <div key={index} className={`${styles["cast_component"]}`}>
+            <Image
               src={`https://image.tmdb.org/t/p/original${member.profile_path}`}
               alt="cover image"
               width={100}
               height={150}
-            />*/}
+              className={`${styles["cast_img"]}`}
+            />
+            <p>{member.name}</p>
           </div>
         ))}
 
       {!loading && directorState && (
-        <div className={`${styles["direccion"]}`}>
-          <h2>Director:</h2>
-          <p>{cast.director.name}</p>
-          {/*<Image
+        <div className={`${styles["cast_component"]}`}>
+          <Image
             src={`https://image.tmdb.org/t/p/original${cast.director.profile_path}`}
             alt="cover image"
             width={100}
             height={150}
-          />*/}
+            className={`${styles["cast_img"]}`}
+          />
+          <p>{cast.director.name}</p>
         </div>
       )}
     </div>

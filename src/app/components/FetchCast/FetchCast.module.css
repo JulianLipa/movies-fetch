@@ -16,5 +16,25 @@
     font-size: 18px;
     font-weight: 400;
 }
+.cast_container{
+    display: flex;
+}
+
+.cast_component{
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.5);
+    margin-right: 10px;
+    text-align: center;
+    width: 8vw;
+}
+
+.cast_img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
 
 

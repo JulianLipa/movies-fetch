@@ -19,7 +19,7 @@ const FetchMovies = () => {
           "https://api.themoviedb.org/3/trending/movie/day?api_key=eb7e3fd7272143562cec959061b5eb32"
         );
         const data = response.data.results;
-        setMovies(data.slice(0, 5));
+        setMovies(data.slice(0, 10));
         setLoading(false);
       } catch (error) {
         console.log("error", error);
@@ -28,8 +28,6 @@ const FetchMovies = () => {
 
     handleFetchMovies();
   }, []);
-
-  console.log(movies)
 
   return (
     <div className={`${styles["container_title_grid"]}`}>

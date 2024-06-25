@@ -5,14 +5,16 @@
     background-image: url("http://localhost:3000/_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2Fraph7qjAGTMXaIjVxt6ZDSXRzUr.jpg&w=3840&q=75");
     background-size: cover; /* Resize the background image to cover the entire container */
     background-attachment: fixed;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+}
+
+.form_container{
+    width: 40vw;
+    position: relative;
+    top: 25vh;
+    margin: 0 auto;
 }
 
 .input_component{
-    width: 40vw;
     height: 5vh;
     background-color: rgba(0,0,0,0.5);
     border: 1px solid white;
@@ -23,6 +25,7 @@
     font-family: '__Inter_aaf875', '__Inter_Fallback_aaf875';
     font-weight: 400;
     transition: all 0.5s ease;
+    width: 100%;
 }
 
 .input_component:focus{
@@ -32,4 +35,46 @@
 
 .logo{
     margin: 0 50%;
+}
+
+.search_container{
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+.false{
+    opacity: 0 !important;
+}
+
+.true{
+    opacity: 1 !important;
+}
+
+.movie_card h2{
+    margin-right: 10px;
+}
+
+.movie_card{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    align-items: center;
+    transition: all 0.5s ease;
+    border: 1px solid black;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 0.8em;
+}
+
+.movie_card:hover{
+    border: 1px solid white;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
+}
+
+.movie_card img{
+    padding: 10px;
+    border-radius: 15px;
 }

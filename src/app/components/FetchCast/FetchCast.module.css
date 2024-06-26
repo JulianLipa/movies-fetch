@@ -21,7 +21,7 @@
 }
 
 .cast_component{
-    border: 1px solid white;
+    border: 0.9px solid white;
     padding: 10px;
     border-radius: 10px;
     background-color: rgba(0,0,0,0.5);

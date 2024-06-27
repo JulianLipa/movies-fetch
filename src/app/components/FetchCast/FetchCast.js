@@ -53,7 +53,7 @@ const FetchCast = ({ id, directorState }) => {
               height={150}
               className={`${styles["cast_img"]}`}
             />
-            <p>{member.name}</p>
+            <p className={styles.nombres}>{member.name}</p>
           </div>
         ))}
 
@@ -66,7 +66,7 @@ const FetchCast = ({ id, directorState }) => {
             height={150}
             className={`${styles["cast_img"]}`}
           />
-          <p>{cast.director.name}</p>
+          <p className={styles.nombres}>{cast.director.name}</p>
         </div>
       )}
     </div>

@@ -2,7 +2,7 @@
     background-color: black;
     color: white;
     text-align: center;
-    padding: 80px;
+    padding: 0 80px;
     border-top: 1px solid white;
     position: relative;
     z-index: 20;
@@ -28,6 +28,10 @@
         margin-top: 6px;
         padding: 20px;
         border-top: 1px solid white;
+    }
+    .logo{
+        height: 70px;
+        width: 150px;
     }
 
 }

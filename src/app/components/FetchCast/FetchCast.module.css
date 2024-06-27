@@ -37,5 +37,31 @@
     object-fit: cover;
     border-radius: 90%;
 }
+.nombres{
+    font-size: 16px;
+}
+
+@media screen and (max-width: 1120px){
+    .cast_img{
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 90%;
+    }
+    .nombres{
+        font-size: 12px;
+    }
+  }
+  @media screen and (max-width: 790px){
+    .cast_img{
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 90%;
+    }
+    .nombres{
+        font-size: 12px;
+    }
+  }
 
 

@@ -14,7 +14,7 @@
 .content {
   position: absolute;
   top: 0;
-  margin: 100px 0 0 150px;
+  margin: 100px 0 0 120px;
   color: white;
   z-index: 10;
   width: 50%;
@@ -35,8 +35,11 @@
 
 .año_genero {
   display: flex;
-  align-items: center;
+  align-items: left;
   padding-bottom: 40px;
+}
+.año_genero{
+  padding-bottom: 2px;
 }
 
 .año_genero div {
@@ -64,7 +67,7 @@
 }
 
 .content_full_width{
-    margin-left: 10vw;
+    margin-left: 8vw;
 }
 
 .content_full_width h2{
@@ -144,7 +147,7 @@
   }
   .año_genero {
     display: flex;
-    align-items: center;
+    align-items: left;
     font-size: 12px;
     padding-bottom: 10px;
   }
@@ -169,7 +172,105 @@
     object-fit: cover;
   }
 }
-
-
-
+@media screen and (max-width: 700px){
+  .info {
+    font-size: 10px;
+    padding-bottom: 14px;
+  }
+  .genre_container{
+    margin-left: 30vw;
+    width: 40vw;
+  }
+  .poster_img {
+    position: absolute;
+   
+    border-radius: 10px;
+  }
+  .año_genero {
+    display: flex;
+    align-items: left;
+    font-size: 12px;
+    padding-bottom: 10px;
+  }
+  .cast_container h2 {
+    font-size: 18px;
+  }
+  .content_full_width h2{
+    font-size: 18px;
+}
+.content_full_width{
+  margin-left: 1vw;
+}
+  .content h3 {
+    font-size: 16px;
+    padding-right: 10px;
+  }
+  .container_single_movies {
+    position: relative;
+    height: 1000px;
+  }
+  .img_hero {
+    display: block;
+    width: 100%;
+    height: 1000px;
+    object-fit: cover;
+  }
+}
+@media screen and (max-width: 670px){
+  .info {
+    font-size: 10px;
+    padding-bottom: 14px;
+  }
+  .genre_container{
+    margin-left: 45vw;
+    width: 40vw;
+  }
+  .poster_img {
+    position: absolute;
+   
+    border-radius: 10px;
+  }
+  .año_genero {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-size: 12px;
+    padding-bottom: 10px;
+  }
+  .content h1{
+    font-size: 20px;
+  }
+  .cast_container h2 {
+    font-size: 18px;
+  }
+  .content_full_width h2{
+    font-size: 18px;
+}
+.content_full_width{
+  margin-left: -1vw;
+}
+  .content h3 {
+    font-size: 16px;
+    padding-right: 10px;
+  }
+  .container_single_movies {
+    position: relative;
+    height: 1000px;
+  }
+  .img_hero {
+    display: block;
+    width: 100%;
+    height: 1000px;
+    object-fit: cover;
+  }
+  .content {
+    position: absolute;
+    top: 0;
+    margin: 100px 0 0 40px;
+    color: white;
+    z-index: 10;
+    width: 50%;
+    height: 100%;
+  }
+}
 

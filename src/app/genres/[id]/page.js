@@ -13,6 +13,7 @@ import FetchGenresById from "@/app/components/FetchGenresById/FetchGenresById"
 const FetchMoviesByGenre = ({ params }) => {
   const { id } = params;
   const [movies, setMovies] = useState([]);
+  const [genre, setGenre] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -30,12 +31,33 @@ const FetchMoviesByGenre = ({ params }) => {
       }
     };
 
+    const handleGenres = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.themoviedb.org/3/genre/movie/list?api_key=eb7e3fd7272143562cec959061b5eb32`
+        );
+        const data = response.data.genres;
+        
+        data.forEach((genre) => {
+          if(genre.id === Number(id)){
+            setGenre(genre.name)
+          }
+        });
+        
+        setLoading(false);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+  
+    handleGenres();
     handleFetchMovies();
   }, [id]);
 
+
   return (
     <div className={`${styles["container_title_grid"]}`}>
-      <h1>Trending Today</h1>
+      <h1>{genre}</h1>
 
       <div className={`${styles["container_fetch_movies"]}`}>
         {loading && (

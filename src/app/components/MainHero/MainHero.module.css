@@ -9,6 +9,11 @@
     justify-content: center;
 }
 
+.movie_poster{
+    width: 5vw;
+    height: 15vh;
+}
+
 .form_container{
     width: 40vw;
     position: relative;

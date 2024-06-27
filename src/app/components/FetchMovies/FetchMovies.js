@@ -54,8 +54,8 @@ const FetchMovies = () => {
                   <Image
                     src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                     alt="cover image"
-                    width={200}
-                    height={270}
+                    width={1000}
+                    height={2000}
                     className={`${styles["movie_poster"]}`}
                   />
                   <div className={`${styles["container_text_movie"]}`}>
@@ -66,6 +66,7 @@ const FetchMovies = () => {
                           alt="cover image"
                           width={15}
                           height={15}
+                          className={`${styles["rate_star_img"]}`}
                         />
                         <h3>{Math.trunc(movie.vote_average)}/10</h3>
                       </div>

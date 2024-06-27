@@ -55,7 +55,7 @@ const SingleMovie = ({ params }) => {
   }, [id]);
 
   return (
-    <div>
+    <div className={`${styles["container_pr"]}`}>
       {loading && (
         <Image
           src="/images/loading.webp"
@@ -67,8 +67,9 @@ const SingleMovie = ({ params }) => {
 
       {!loading && movie.movie && images.filePath && (
         <div className={`${styles["container_single_movies"]}`}>
-          <div className={"container_hero"}>
             <div className={`${styles["overlay"]}`}></div>
+          
+          <div className={"container_hero"}>
             <Image
               className={`${styles["img_hero"]}`}
               src={`https://image.tmdb.org/t/p/original${images.filePath}`}

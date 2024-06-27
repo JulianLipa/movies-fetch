@@ -2,7 +2,8 @@
     background-color: black;
     color: white;
     text-align: center;
-    margin-top: 20px;
     padding: 80px;
     border-top: 1px solid white;
+    position: relative;
+    z-index: 20;
 }

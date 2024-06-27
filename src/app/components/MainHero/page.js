@@ -33,11 +33,8 @@ const MainHero = () => {
     handleFetchGenres();
   }, []);
 
-  console.log(searchState);
-
   const keyUp = () => {
     var text = document.getElementById("inputBar").value;
-    console.log(text);
 
     if (text.length === 0) {
       setSearchState(false);

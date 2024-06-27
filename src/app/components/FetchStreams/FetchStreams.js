@@ -28,8 +28,6 @@ const FetchStreams = ({ id }) => {
     handleWatchStreams();
   }, [id]);
 
-  console.log(stream);
-
   return (
     <div className={`${styles["stream_container"]}`}>
       {!loading && stream != undefined && stream.hasOwnProperty('flatrate') && (

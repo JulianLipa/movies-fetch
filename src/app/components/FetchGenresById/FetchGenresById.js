@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Image from "next/image";
 import styles from "@/app/components/FetchMovies/FetchMovies.module.css";
 import Link from "next/link";
 import React from "react";

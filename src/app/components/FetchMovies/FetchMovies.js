@@ -72,7 +72,6 @@ const FetchMovies = () => {
                   </div>
                 </div>
                 <div className={`${styles["container_hover"]}`}>
-                  <h4>{}</h4>
                   <FetchGenresById id={movie.id} />
                 </div>
               </Link>

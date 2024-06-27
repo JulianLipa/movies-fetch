@@ -5,6 +5,8 @@
     background-image: url("http://localhost:3000/_next/image?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2Fraph7qjAGTMXaIjVxt6ZDSXRzUr.jpg&w=3840&q=75");
     background-size: cover; /* Resize the background image to cover the entire container */
     background-attachment: fixed;
+    display: flex;
+    justify-content: center;
 }
 
 .form_container{
@@ -19,7 +21,7 @@
     background-color: rgba(0,0,0,0.5);
     border: 1px solid white;
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 20px;
     font-size: 1em;
     color: white;
     font-family: '__Inter_aaf875', '__Inter_Fallback_aaf875';
@@ -38,8 +40,9 @@
 }
 
 .search_container{
+    opacity: 1;
     width: 100%;
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 20px;
     background-color: rgba(0,0,0,0.5);
     color: white;
@@ -47,6 +50,7 @@
 
 .false{
     opacity: 0 !important;
+    display: none !important;
 }
 
 .true{
@@ -78,4 +82,16 @@
 .movie_card img{
     padding: 10px;
     border-radius: 15px;
+}
+
+.container_genres{
+    top: unset !important;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container_genres a{
+    margin-top: 10px;
+    margin-bottom: 0 !important;
 }

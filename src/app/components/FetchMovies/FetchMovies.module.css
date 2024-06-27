@@ -1,3 +1,6 @@
+
+  
+
 .container_title_grid {
   display: flex;
   flex-direction: column;
@@ -17,6 +20,7 @@
   justify-content: center;
 }
 
+
 .movie_card {
   width: 15%;
   background-color: rgb(0, 0, 0);
@@ -28,7 +32,6 @@
   border: 1px solid black;
   position: relative;
 }
-
 .movie_card img {
   height: auto !important;
 }
@@ -54,14 +57,19 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 70%;
 }
 
 .container_main {
-  display: block;
+  display: flex;
+  width: auto;
+  height: fit-content;
+  flex-direction: column;
 }
 
 .container_main img:first-of-type{
   transition: all ease 1s;
+
 }
 
 .container_hover {
@@ -84,10 +92,13 @@
 
 .movie_card:hover > .container_main .movie_poster{
   opacity: 0.3;
+
 }
 
 .movie_poster{
   border-radius: 10px;
+  width: 100%;
+  height: auto;
 }
 
 .container_genres{
@@ -100,7 +111,8 @@
 
 .genre_component{
   display: flex;
-  margin-right: 7px;
+  margin-right: 5px;
+  margin-top: 5px;
   border: 1px solid rgb(132, 0, 0);
   border-radius: 15px;
   background-color: rgba(80, 0, 0, 0.566);
@@ -112,4 +124,87 @@
 .genre_component:hover{
   background-color: black;
   border: 1px solid white;
+}
+
+@media screen and (max-width: 1120px){
+
+  
+  .container_title_grid h1 {
+    font-size: 20px;
+    
+  }
+
+  
+  .movie_card {
+ 
+    height: 300px;
+
+  }
+  
+ 
+  
+  
+  
+  .rate_star_img{
+    height: 10px;
+    width: 10px;
+  }
+  
+  
+
+  .container_text_movie h2{
+  font-size: 15px;
+  }
+  .container_text_movie h3{
+    font-size: 12px;
+    }
+ 
+
+  
+
+  .genre_component{
+    margin-right: 2px;
+    margin-top: 2px;
+    font-size: 10px;
+  }
+  
+ 
+  
+}
+@media screen and (max-width: 500px){
+  .container_fetch_movies {
+    flex-direction: column;
+    align-items: center;
+  }
+  .movie_card {
+    width: 60%;
+    
+    height: 540px;
+    
+  }
+  .container_title_grid h1 {
+    font-size: 40px;
+  }
+  .rate_star_img{
+    height: 20px;
+    width: 20px;
+  }
+  
+  
+
+  .container_text_movie h2{
+  font-size: 20px;
+  }
+  .container_text_movie h3{
+    font-size: 20px;
+    }
+ 
+
+  
+
+  .genre_component{
+    margin-right: 4px;
+    margin-top: 4px;
+    font-size: 20px;
+  }
 }
